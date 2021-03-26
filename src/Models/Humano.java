@@ -2,11 +2,12 @@ package Models;
 import Interfaces.Beber;
 import Interfaces.Orinar;
 
-public class Humano {
+public abstract class Humano {
 
     private String nombre;
     private Integer edad;
     private Integer peso;
+    protected Integer capaciadVejiga;
     protected Orinar orinar;
     protected Beber beber;
 
@@ -14,10 +15,11 @@ public class Humano {
 
     }
 
-    public Humano(String nombre, Integer edad, Integer peso, Orinar orinar, Beber beber) {
-        this.nombre = nombre;
+    public Humano(String name, Integer edad, Integer peso, Orinar orinar, Beber beber) {
+        this.nombre = name;
         this.edad = edad;
         this.peso = peso;
+        this.capaciadVejiga = (getPeso()/7) * (getEdad()/100);
         this.orinar = orinar;
         this.beber = beber;
     }
@@ -26,14 +28,14 @@ public class Humano {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.nombre = name;
     }
 
     public Integer getEdad() { return this.edad; }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
+    public void setEdad(Integer age) {
+        this.edad = age;
     }
 
     public Integer getPeso() { return this.peso; }
@@ -42,21 +44,22 @@ public class Humano {
         this.peso = peso;
     }
 
+    public Integer getCapaciadVejiga() {
+        return this.capaciadVejiga;
+    }
+
+    public void setCapaciadVejiga(Integer capaciadVejiga) {
+        this.capaciadVejiga = capaciadVejiga;
+    }
+
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", peso=" + peso +
+        return "Nombre='" + this.nombre + '\'' +
+                ", Edad=" + this.edad +
+                ", Peso=" + this.peso +
                 '}';
     }
 
-    public void orinar() {
-        orinar.orinar();
-    }
-
-    public void beber() {
-        beber.beber();
-    }
-
+    public abstract int capacidadExtraVejiga();
 
 }

@@ -5,7 +5,7 @@ import Interfaces.Beber;
 public class BeberEspartanoImp implements Beber {
 
     @Override
-    public void beber() {
-        System.out.println("Voy a beber, soy un espartano");
+    public String beber() {
+        return "Soy un espartano y voy a beber";
     }
 }
