@@ -19,12 +19,12 @@ public class Vikingo extends Humano {
         this.capaciadVejiga = capacidadExtraVejiga();
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "Vikingo{" + super.toString() +
                 "toleranciaExtra=" + toleranciaExtra +
                 '}';
-    }
+    }*/
 
     public Integer getToleranciaExtra() {
         return this.toleranciaExtra;

@@ -54,10 +54,15 @@ public abstract class Humano {
 
     @Override
     public String toString() {
-        return "Nombre='" + this.nombre + '\'' +
-                ", Edad=" + this.edad +
-                ", Peso=" + this.peso +
-                '}';
+        return "Nombre: " + this.nombre +
+                " - Edad: " + this.edad +
+                " - Peso: " + this.peso +
+                " - Capacidad vejiga: "+ this.getCapaciadVejiga();
+    }
+
+    public String presentar() {
+        return this.getClass().getSimpleName()+" "+this.getNombre()+" de "+this.getEdad()+" anios, un peso de "+this.getPeso()+" kg " +
+                "y una capacidad de vegiga para beber de "+getCapaciadVejiga()+" litros";
     }
 
     public abstract int capacidadExtraVejiga();
